@@ -1,0 +1,19 @@
+#+title:  Lab Integration Kit (LIK)
+
+* Introduction
+
+
+Welcome to the Virtual Labs Lab Integration Kit.  This is release
+version ... .
+
+
+* Structure of this kit
+
+#+BEGIN_EXAMPLE
+top/
+  index.txt
+  makefile
+#+END_EXAMPLE
+
+
+
