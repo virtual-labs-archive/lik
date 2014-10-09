@@ -15,10 +15,10 @@ Lab Integration Kit
 
 ####Usage
     
-    ```make -k ``` must be run which generates the *build* folder
+    ```make -k``` must be run which generates the *build* folder
     containing all the required files for this particular LIK.
     
-    '''
+    ```
     make -n
     ```
 
