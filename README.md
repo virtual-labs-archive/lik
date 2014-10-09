@@ -1,6 +1,4 @@
-###lik
-
-Lab Integration Kit
+###Lab Integration Kit
 
 #### Structure of the Lab Integration Kit.
 
@@ -15,12 +13,12 @@ Lab Integration Kit
 
 ####Usage
     
-    ```make -k``` must be run which generates the *build* folder
+    `make -k` must be run which generates the *build* folder
     containing all the required files for this particular LIK.
     
-    ```
-    make -n
-    ```
+    
+        make -n
+    
 
     The folder build is tarred and zipped that will be released to integrators.
 
