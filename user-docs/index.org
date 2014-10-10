@@ -1,19 +1,49 @@
 #+title:  Lab Integration Kit (LIK)
+#+SETUPFILE: ./org-templates/level-0.org
 
 * Introduction
 
-
 Welcome to the Virtual Labs Lab Integration Kit.  This is release
-version ... .
-
+version 0.5.0
 
 * Structure of this kit
 
-#+BEGIN_EXAMPLE
-top/
-  index.txt
-  makefile
-#+END_EXAMPLE
+#+BEGIN_example
+-  user-docs
+      |
+      ---- index.org (provides instructions on the usage of the kit)
+-  ovpl-kit
+      |
+      ----- user-docs 
+               |
+               ----  index.org (provides information about the usage)
+      |
+      ----- scripts (scripts needed to set  up centos as a hosting environment
+      |
+      ----- ovpl ( soruce code of auto deployment)
+      |
+-  ui-kit
+      |
+      ----- user-docs 
+               |
+               ----  index.org (provides information about the usage)
+      |
+      ----- scripts (scripts needed for conversion to UI 1.0 framework)
+      |
+      ----- src ( contains the source for UI 1.0 template )
+
+#+END_example
+
+
+* Documentation
+
+- [[../ovpl-kit/user-docs/index.org][Documentation on OVPL KIT]]
+
+- [[../ui-kit/user-docs/index.html][Documentation on UI KIT]]
+
+
+
+
 
 
 
