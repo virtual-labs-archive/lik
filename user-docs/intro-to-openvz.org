@@ -1,0 +1,276 @@
+#+Title:  Introduction to OpenVZ
+#+Author: Jayanth Sagar T and Yogesh Aggarwal
+#+Date:   [2014-09-16 Tue]
+#+SETUPFILE: ./org-templates/level-0.org
+* About this Document
+This document provides the basic information about virtualization and OpenVZ - a server virtualization software for linux-based computers.\\
+
+*Audience of this Document*\\
+The primary audience of this document are the Integration Engineers who are involved in the Auto-Deployment process. It is assumed that the Integration Engineers are comfortable with Linux system administration.\\
+
+*System Pre-requsites*\\
+The hardware and software requirements of the systems that the Integration Engineers use for virtualization are:\\
++ Minimum 2GB RAM
++ The machine should have one dedicated partition for CentOS (version 6.5 only)
++ Minimum 50GB hard disk space
++ The machine should have a dual core processor
+
+*Assumptions*\\
+It is assumed that the Integration Engineers will have the lab sources of their respective Institutes with them.
+
+* Introduction to Virtualization
+
++ Virtualization is a framework or methodology of dividing the resources of a computer into multiple execution environments. Virtualization techniques create multiple isolated partitions such as Virtual Machines (VM) or Virtual Environments (VEs) on a single physical server. 
++ Virtualization refers to the abstraction of computer resources. It is "a technique for hiding the physical characteristics of computing resources from the way in which other systems, applications, or end users interact with those resources. This involves making a single physical resource (such as a server, an operating system, an application, or storage device) function as multiple logical resources; or it can involve making multiple physical resources (such as storage devices or servers) appear as a single logical resource."
++ The common theme of all virtualization technologies is the hiding of technical detail through encapsulation. Virtualization creates an external interface that hides an underlying implementation by multiplexing access, by combining resources at different physical locations, or by simplifying a control system.
+[[./img/virtualization.png]]
+
+* Types of Virtualization
+
+1. *Full virtualization*: This involves almost complete simulation of the actual hardware to allow software of a guest operating system to run unmodified.
+2. *Partial virtualization*: In this scenario, some but not all the target environment is simulated. Some guest programs may need modifications to run in this virtual environment.
+3. *Paravirtualization*: In this environment, a hardware environment is not simulated. However, the guest programs are executed in their own isolated domains as if they are running on a separate system. Guest programs need to be specifically modified to run in this environment.
+
+* Operating System-level Virtualization
+
++ Operating system-level virtualization is a server virtualization method where the kernel of an operating system allows multiple isolated user space instances instead of just one. Such instances often called containers, virtualization engines (VE), virtual private servers (VPS) or FreeBSD jail(jails) may look and feel like a real server from the point of view of its owners and users. On Unix-like operating systems, this technology can be seen as an advanced implementation of the standard chroot mechanism. In addition to isolation mechanisms, the kernel often provides resource management features to limit the impact of one container's activities on the other containers. Virtual labs architecture uses OS level virtualization software called OpenVZ.
+
+* Introduction to OpenVZ
+
++ OpenVZ is container-based virtualization for Linux. OpenVZ creates multiple secure, isolated Linux containers (otherwise known as VEs or VPSs) on a single physical server enabling better server utilization and ensuring that applications do not conflict.
++ Each container performs and executes exactly like a stand-alone server; a container can be rebooted independently and have root access, users, IP addresses, memory, processes, files, applications, system libraries and configuration files.
+ 
+** What is a Container?
+
++ A container (otherwise known as CT, Virtual Environment (VE), Virtual Private Server (VPS) etc.) is one of the main concepts of OpenVZ.
++ Container is an isolated entity which performs and executes exactly like a stand-alone server. Container can be rebooted independently and have root access, users/groups, IP address(es), memory, processes, files, applications, system libraries and configuration files.
++ OpenVZ supports multiple CTs (as many as several hundreds) on a single Hardware Node. 
+
+** What is an OpenVZ kernel?
+
+*The OpenVZ kernel is a Linux kernel modified to support OpenVZ containers. It has the following functionalities:*
+*** Virtualization and Isolation
+*This is a functiionaliy where each container is a separate entity, and behaves like a physical server. Each container has its own:*
+***** Files
+    System libraaries, applications, virtualized /proc and /sys, virtualized locks, etc.
+
+***** Users and groups
+    Each container has its own root user as well as other users and groups.
+
+***** Process tree
+    A container only sees its own processes (starting from init). PIDs are virtualized, so that the init PID is 1 as it should be.
+
+***** Network
+    A virtual network device, which allows a container to have its own IP addresses as well as a set of netfilter (iptables), and routing rules.
+
+***** Devices
+    If needed, any container can be granted access to real devices like network interfaces, serial ports, disk partitions, etc.
+
+***** IPC objects
+    Shared memory, semaphores, messages. 
+*** Enables many VEs within a single kernel
+According to this functionality, many containers can be created on top of a single OpenVZ kernel. 
+*** Resource management
+*As per this functionality, the OpenVZ kernel manages CPU, RAM, Disk space on a per VE basis*
+*- OpenVZ resource management is a set of controls providing per-container resource accounting and limiting.*\\ 
+*- This is required for multiple containers to coexist gracefully on a single host system.*\\
+*- OpenVZ resource management includes these four primary controllers:*\\
++ User beancounters (and VSwap)
++ Disk quota
++ CPU Fair scheduler
++ I/O priorities and I/O limits
+*** Checkpointing
++ This functionality involves freezing a VE, saving its state to disk with the ability to unfreeze the state later.
+
+* OpenVZ Installation
+ The following link briefly describes the steps needed to install OpenVZ on a CentOS 6 machine.
+
++  [[https://openvz.org/Quick_installation ][OpenVZ quick Installation manual]]
+
+* Commands used in OpenVZ
+Some of the commonly used OpenVZ commands are described below.\\
+*To list all the running/stopped containers*   
+#+BEGIN_SRC <SHELL>
+vzlist -a
+#+END_SRC
+
+*To list all the running containers in the node*
+#+BEGIN_SRC <SHELL>
+ vzlist
+#+END_SRC
+
+*To display the templates present in the server*
+#+BEGIN_SRC <SHELL> 
+vzpkgls
+#+END_SRC
+
+*To create a Container with CTID 101 and ostemplate fedora-core-4 with vps.basic configuration*
+#+BEGIN_SRC <SHELL>
+ vzctl create 101 --ostemplate fedora-core-4 -.config vps.basic
+#+END_SRC
+
+*To delete and destroy a Container with CTID 101*
+#+BEGIN_SRC <SHELL> 
+vzctl destroy 101
+#+END_SRC
+
+*To configure Container (The changes are saved in /etc/vz/conf/<CTID>.conf) To automatically boot when a node is up*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --onboot yes --save
+#+END_SRC
+
+*To set hostname*
+#+BEGIN_SRC <SHELL>
+ vzctl set 101 --hostname test101.my.org --save
+#+END_SRC
+
+*To add an IP address*
+#+BEGIN_SRC <SHELL>
+ vzctl set 101 --ipadd 10.0.186.1 --save
+#+END_SRC
+
+*To delete an IP address*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --ipdel 10.0.186.1 --save
+#+END_SRC
+*To set the name servers*
+#+BEGIN_SRC <SHELL>
+ vzctl set 101 --nameserver 192.168.1.165 --save
+#+END_SRC
+
+*To set the root password of container 101*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --userpasswd root:password
+#+END_SRC
+
+*To set shortname for Container*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --name test101 --save
+#+END_SRC
+
+*To start a Container*
+#+BEGIN_SRC <SHELL>
+ vzctl start 101
+#+END_SRC
+
+*To start a disabled Container*
+#+BEGIN_SRC <SHELL> 
+vzctl start 101 --force
+#+END_SRC
+
+*To stop a Container*
+#+BEGIN_SRC <SHELL>
+ vzctl stop 101
+#+END_SRC
+
+*To restart a Container*
+#+BEGIN_SRC <SHELL> 
+vzctl restart 101
+#+END_SRC
+
+*To know the status of a Container*
+#+BEGIN_SRC <SHELL> 
+vzctl status 101
+#+END_SRC
+
+*To get the details of the Container like CTID, ClassID, number of processes inside each Container and the IP addresses of Container*
+#+BEGIN_SRC <SHELL>
+cat /proc/vz/veinfo
+#+END_SRC
+
+*To enter into a Container 101*
+#+BEGIN_SRC <SHELL>
+vzctl enter 101
+#+END_SRC
+
+To execute a command in Container 101
+#+BEGIN_SRC <SHELL>
+vzctl exec 101 command --- replace command with the command you need to execute
+vzctl exec 101 df -h
+#+END_SRC
+
+*Managing Disk Quotas To assign disk quotas - First limit is soft limit, second limit is hard limit*
+#+BEGIN_SRC <SHELL>
+ vzctl set 101 --diskspace 10485760 --save  ==>> for setting 10GB
+ OR
+ vzctl set 101 --diskspace 1048576 --save   ==>> for setting 1GB
+#+END_SRC
+
+*To assign disk inodes*
+#+BEGIN_SRC <SHELL>
+vzctl set 101 --diskinodes 90000:91000 --save
+#+END_SRC
+
+*To check the disk quota of a Container*
+#+BEGIN_SRC <SHELL>
+vzquota stat 101 -t
+#+END_SRC
+
+*Managing CPU quota To display the available CPU power*
+#+BEGIN_SRC <SHELL> 
+vzcpucheck
+#+END_SRC
+
+*To set the number of CPUs available to a Container*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --cpus 2 --save
+#+END_SRC
+
+*To set the minimum and maximum CPU limits*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --cpuunits nnnn --cpulimit nn --save
+#+END_SRC
+(cpuunits is a an absolute number (fraction of power of the node) and cpulimit is taken as percentage)
+
+*Managing memory quota To display memory usage*
+#+BEGIN_SRC <SHELL> 
+vzmemcheck -v
+#+END_SRC
+
+*To set kmem*
+#+BEGIN_SRC <SHELL>
+ vzctl set 101 --kmemsize 2211840:2359296 --save
+#+END_SRC
+*To set privvmpages*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --privvmpages 2G:2G --save
+#+END_SRC
+
+*Other Commands To copy/clone a Container*
+#+BEGIN_SRC <SHELL> 
+vzmlocal -C <source_CTID>:<desitnation_CTID>
+#+END_SRC
+*To disable a Container*
+#+BEGIN_SRC <SHELL>
+vzctl set 101 --disabled yes
+#+END_SRC
+
+*To enable a Container*
+#+BEGIN_SRC <SHELL> 
+vzctl set 101 --disabled no
+#+END_SRC
+
+*To suspend a VPS*
+#+BEGIN_SRC <SHELL> 
+vzctl suspend 101
+#+END_SRC
+*To resume a Container*
+#+BEGIN_SRC <SHELL>
+vzctl resume 101
+#+END_SRC
+
+*To run yum update on a Container*
+#+BEGIN_SRC <SHELL>
+ vzyum 101 -y update
+#+END_SRC
+
+*To install a package using yum on Container*
+#+BEGIN_SRC <SHELL> 
+vzyum 101 -y install package
+#+END_SRC
+*To install a package using rpm on Container*
+#+BEGIN_SRC <SHELL> 
+vzrpm 101 -ivh package
+#+END_SRC
+
+[[https://openvz.org/Man/vzctl.8 ][Visit Man page to know about all OpenVZ commands in detail]] 

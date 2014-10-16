@@ -1,0 +1,48 @@
+#+Title:  FAQ on CentOS Basic Shell Commands
+#+Author: Prakash B Hegade, Amulya Sri
+#+Date:   [2014-09-16 Tue]
+#+SETUPFILE: ./org-templates/level-0.org
+
+* FAQ-Basic Shell Commands
+
+
+** There is Permission Denied Error. How do we resolve it?
+This error is encountered if one does not have admin privileges. To do so, run the command by prefixing a 
+#+begin_example
+sudo
+#+end_example
+
+For example, 
+#+begin_example
+sudo yum install pip
+#+end_example
+
+** How to give read-write-execute permissions to a file?
+The permissions can be given by the following command:
+#+begin_example
+chmod 0777 file-name
+#+end_example
+
+** How can we install packages using package manager (CentOS) ?
+Use YUM to install packages using package manager. (YUM - Yellow Dog Manager)
+#+begin_example
+sudo yum install package-name
+#+end_example
+Check for network settings / proxy if the commnad fails. 
+
+** How can I copy file from remote system ?
+We can copy file from remote system using the command scp. 
+#+begin_example
+scp path-to-source-file user@ip:/path-to-destination
+#+end_example
+
+
+** How do we kill a running process?
+#+begin_example
+ps -ef | grep name-of-the-process
+#+end_example
+
+Now note the process-id of the process that you want to kill and issue the command:
+#+begin_example
+kill -9 process-id
+#+end_example

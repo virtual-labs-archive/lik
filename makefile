@@ -16,23 +16,25 @@ all: publish create-release
 init: 
 	(rm -rf ${COD}/${DEST}; rm -rf ${COD}/${SETUP-DIR}; \
 	rm -rf ${COD}/${OVPL-DIR}; rm -rf ${COD}/${UI-DIR}; \
-	rm -rf ${COD}/*.tar*; \
+	rm -rf ${COD}/${RELEASE}.tar; rm -rf ${COD}/${RELEASE}.tar.gz; \
 	mkdir -p ${COD}; mkdir -p ${COD}/${DEST}; \
 	mkdir -p ${COD}/${RELEASE}; \
 	mkdir -p ${COD}/${DEST}/${USER-DOCS}; \
 	mkdir -p ${COD}/${DEST}/ovpl-kit; \
-	mkdir -p ${COD}/${DEST}/ui-kit)
+	mkdir -p ${COD}/${DEST}/${UI-DIR})
 
 publish: init
 	emacs --script ${COD}/${USER-DOCS}/elisp/publish.el
 	(rm -rf ${DEST}/*~; mv ${DEST}/*.html ${DEST}/${USER-DOCS}; \
 	mv ${DEST}/org-templates ${DEST}/${USER-DOCS}; \
-	mv ${DEST}/style ${DEST}/${USER-DOCS})
+	mv ${DEST}/style ${DEST}/${USER-DOCS}; \
+	mv ${DEST}/img ${DEST}/${USER-DOCS})
+
 
 create-release: build-setup-ovpl-centos build-ui-toolkit
 	rsync -raz --progress ${COD}/${SETUP-DIR}/build/ ${COD}/${DEST}/ovpl-kit
 	rsync -raz --progress ${COD}/${OVPL-DIR} ${COD}/${DEST}/ovpl-kit
-	rsync -raz --progress ${COD}/${UI-DIR}/build/ ${COD}/${DEST}/ui-kit
+	rsync -raz --progress ${COD}/${UI-DIR}/build/ ${COD}/${DEST}/${UI-DIR}
 	(rm -rf ${COD}/${SETUP-DIR}; rm -rf ${COD}/${OVPL-DIR}; \
 	rm -rf ${COD}/${UI-DIR})
 	(mv ${COD}/${DEST}/* ${COD}/${RELEASE}; rm -rf ${COD}/${DEST})

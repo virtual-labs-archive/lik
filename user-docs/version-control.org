@@ -1,0 +1,46 @@
+#+Title:  Version Control Basics
+#+Author: Prakash B Hegade, Amulya Sri
+#+Date:   [2014-09-16 Tue]
+#+SETUPFILE: ./org-templates/level-0.org
+
+* Objective
+The objective of this tutorial is to describe why to use version control and how to use "GitHub" as a  version control tool.
+
+Going forward, version control will be a pre-requisite for all the tasks that you will perform while setting up OVPL. Therefore, it is recommended that you browse through the tutorial below to refresh your concepts of Git.
+
+Let's Git this party going!
+
+
+* Agenda
+The outcome of this tutorial is to:
+- Realize the importance of version control
+- Have an account on GitHub
+- Have GitHub commands at finger tips
+
+* Our Work Environment
+Our work environment is about:
+- Timely code releases
+- Multiple developers working together
+- Code Reverts and Changes
+
+The biggest challenge in such a dynamic working condition is tracking changes made by one and all. That's the reason version control comes into the picture.
+
+* Version Control
+Version control has the following features:
+- Facility to log every version
+- Ability to differentiate between several versions
+- Revert to required version
+- Provide better collaboration among working team
+- Convenient way of sharing data
+- Facilitate backup of all versions produced
+
+
+* About GitHub
+GitHub is one of the many version control tools.
+- It has been in existence since 2008.
+- It is a code sharing and publishing service.
+- It is a social networking site for programmers.
+
+Find the documentation of GitHub and Tutorials at:
+
+[[https://help.github.com/articles/set-up-git][GitHub Tutorials]]

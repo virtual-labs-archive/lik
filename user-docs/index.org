@@ -1,49 +1,71 @@
-#+title:  Lab Integration Kit (LIK)
+#+title:  Lab Integration Kit (LIK 0.5.0)
 #+SETUPFILE: ./org-templates/level-0.org
 
 * Introduction
 
-Welcome to the Virtual Labs Lab Integration Kit.  This is release
-version 0.5.0
+  Welcome to the Virtual Labs Lab Integration Kit. This kit contains both software and user documenation 
+  to help integrators:
 
+- deploy a lab automatically and
+- structure their labs to comply with a standard UI template
+  
 * Structure of this kit
 
 #+BEGIN_example
 -  user-docs
       |
-      ---- index.org (provides instructions on the usage of the kit)
+      ---- index.org (instructions on the usage of the kit)
 -  ovpl-kit
       |
       ----- user-docs 
                |
-               ----  index.org (provides information about the usage)
+               ----  index.org (information about the usage)
       |
-      ----- scripts (scripts needed to set  up centos as a hosting environment
+      ----- scripts (set up CentOS as a hosting environment)
       |
-      ----- ovpl ( soruce code of auto deployment)
+      ----- ovpl (soruce code of auto deployment)
       |
 -  ui-kit
       |
       ----- user-docs 
                |
-               ----  index.org (provides information about the usage)
+               ----  index.org (steps to convert a lab to UI 1.0 format)
       |
-      ----- scripts (scripts needed for conversion to UI 1.0 framework)
+      ----- scripts (needed for conversion to UI 1.0 format)
       |
-      ----- src ( contains the source for UI 1.0 template )
+      ----- src ( contains the UI 1.0 template )
 
 #+END_example
 
+* Pre-requisites for using this kit
+
+  - To use the lab integration kit, you should know how to ::
+
+   - execute basic shell commands in CentOS 6.5
+   - create and delete a container in OpenVZ virtual environment
+   - create or modify an HTML page and write a code in JavaScript
+   - use git, a version control tool
+   - create repositories on github.com
+
+  - Reference Material ::
+
+    - Frequently asked questions on basic shell commands ([[./faq.org]])
+    - Concepts of Virtualization ([[./intro-to-openvz.org]])
+    - HTML and Javascript ([[http://www.w3schools.com/html/]] , [[http://www.w3schools.com/js/]])
+    - Version Control and GitHub ([[./version-control.org]])
 
 * Documentation
 
-- [[../ovpl-kit/user-docs/index.org][Documentation on OVPL KIT]]
+ #+BEGIN_HTML
+ <p>
+ <a href="../ovpl-kit/user-docs/index.html" target="_blank">Documentation on OVPL KIT (opens in another tab)</a> 
+ </p>
+ #+END_HTML
 
-- [[../ui-kit/user-docs/index.html][Documentation on UI KIT]]
-
-
-
-
-
+ #+BEGIN_HTML
+ <p>
+ <a href="../ui-1.0-toolkit/user-docs/index.html" target="_blank">Documentation on UI KIT (opens in another tab)</a> 
+ </p>
+ #+END_HTML
 
 
