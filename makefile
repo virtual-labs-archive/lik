@@ -4,8 +4,11 @@ DEST=build
 RELEASE=lik-release-0.5.0
 USER-DOCS=user-docs
 SETUP-DIR=setup-ovpl-centos
+SETUP-VERSION=v1.0.0
 OVPL-DIR=ovpl
+OVPL-VERSION=v1.0.1
 UI-DIR=ui-1.0-toolkit
+UI-VERSION=v1.0.0
 
 setup-ovpl-centos=https://github.com/vlead/setup-ovpl-centos.git
 ovpl=https://github.com/vlead/ovpl.git
@@ -16,7 +19,8 @@ all: publish create-release
 init: 
 	(rm -rf ${COD}/${DEST}; rm -rf ${COD}/${SETUP-DIR}; \
 	rm -rf ${COD}/${OVPL-DIR}; rm -rf ${COD}/${UI-DIR}; \
-	rm -rf ${COD}/${RELEASE}.tar; rm -rf ${COD}/${RELEASE}.tar.gz; \
+	rm -rf ${COD}/${RELEASE}; rm -rf ${COD}/${RELEASE}.tar; \
+	rm -rf ${COD}/${RELEASE}.tar.gz; \
 	mkdir -p ${COD}; mkdir -p ${COD}/${DEST}; \
 	mkdir -p ${COD}/${RELEASE}; \
 	mkdir -p ${COD}/${DEST}/${USER-DOCS}; \
@@ -48,11 +52,14 @@ build-ui-toolkit: co-ui-toolkit
 	cd ${COD}/${UI-DIR}; make -k
 
 co-setup-ovpl-centos:
-	(cd ${COD}; git clone ${setup-ovpl-centos})
+	(cd ${COD}; git clone ${setup-ovpl-centos}; \
+	 cd ${SETUP-DIR}; git checkout -b version tags/${SETUP-VERSION})
 
 co-ovpl:
-	(cd ${COD}; git clone ${ovpl})
+	(cd ${COD}; git clone ${ovpl}; \
+	cd ${OVPL-DIR}; git checkout -b version tags/${OVPL-VERSION})
 
 co-ui-toolkit:
-	(cd ${COD}; git clone ${ui-toolkit})
+	(cd ${COD}; git clone ${ui-toolkit}; \
+	cd ${UI-DIR}; git checkout -b version tags/${UI-VERSION})
 
