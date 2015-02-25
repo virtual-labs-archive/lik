@@ -4,7 +4,7 @@ Lab Integration Kit
 
 #### Structure of the Lab Integration Kit.
 
-* makefile
+* Makefile
 * README.md
 * user-docs
   * index.org     - Contians the content from which html file is generated.
