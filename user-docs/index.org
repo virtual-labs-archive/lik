@@ -1,4 +1,4 @@
-#+title:  Lab Integration Kit (LIK 0.5.0)
+#+title:  Lab Integration Kit (LIK 0.6.0)
 #+SETUPFILE: ./org-templates/level-0.org
 
 * Introduction
@@ -56,9 +56,12 @@
 
 * Documentation
 
+  Documentation for both Auto Deployment Service Kit and UI KIT is
+  here:
+
  #+BEGIN_HTML
  <p>
- <a href="https://github.com/vlead/setup-ovpl-centos/tree/master/user-docs/index.org" target="_blank">Documentation on OVPL KIT (opens in another tab)</a> 
+ <a href="https://github.com/vlead/setup-ovpl-centos/tree/master/user-docs/index.org" target="_blank">Documentation on ADS KIT (opens in another tab)</a> 
  </p>
  #+END_HTML
 

@@ -1,14 +1,14 @@
 #Checkout directory
 COD=.
 DEST=build
-RELEASE=lik-release-0.5.0
+RELEASE=lik-release-0.6.0
 USER-DOCS=user-docs
 SETUP-DIR=setup-ovpl-centos
-SETUP-VERSION=v1.0.0
+SETUP-VERSION=v1.0.1
 OVPL-DIR=ovpl
-OVPL-VERSION=v1.0.1
+OVPL-VERSION=v1.0.4
 UI-DIR=ui-1.0-toolkit
-UI-VERSION=v1.0.0
+UI-VERSION=v1.0.1
 
 setup-ovpl-centos=https://github.com/vlead/setup-ovpl-centos.git
 ovpl=https://github.com/vlead/ovpl.git
@@ -53,8 +53,7 @@ build-ui-toolkit: co-ui-toolkit
 
 co-setup-ovpl-centos:
 	(cd ${COD}; git clone ${setup-ovpl-centos}; \
-	 cd ${SETUP-DIR}; git checkout -b version tags/${SETUP-VERSION})
-
+	cd ${SETUP-DIR}; git checkout -b version tags/${SETUP-VERSION})
 co-ovpl:
 	(cd ${COD}; git clone ${ovpl}; \
 	cd ${OVPL-DIR}; git checkout -b version tags/${OVPL-VERSION})

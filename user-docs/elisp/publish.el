@@ -18,7 +18,7 @@
  :base-extension "org"
  :publishing-directory ,publishing-dir
  :recursive t
- :publishing-function org-publish-org-to-html
+ :publishing-function org-html-publish-to-html
  :headline-levels 4             ; Just the default for this project.
  :auto-preamble t
  :auto-sitemap t
@@ -34,7 +34,7 @@
 
  (setq presentation  '("presentation" :components ("org-notes" "org-static")))
 
- (require 'org-publish)
+ (require 'ox-publish)
  ; (require 'htmlize)
  ; (load "~/emacs/lisp/htmlize/htmlize.el")
  ; the script is running from the parent directory

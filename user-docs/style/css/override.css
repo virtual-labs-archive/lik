@@ -34,3 +34,10 @@ a {
     color: #293e3d;
     text-decoration: none;
 }
+
+#postamble {
+    color: #464646;
+    font-size: 0.8em;
+    line-height: 100%;
+    padding-top: 1em;
+}
