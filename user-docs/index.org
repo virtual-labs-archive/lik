@@ -61,13 +61,13 @@
 
  #+BEGIN_HTML
  <p>
- <a href="https://github.com/vlead/setup-ovpl-centos/tree/master/user-docs/index.org" target="_blank">Documentation on ADS KIT (opens in another tab)</a> 
+ <a href="../ovpl-kit/user-docs/setup-centos.html" target="_blank">Documentation on OVPL KIT (opens in another tab)</a> 
  </p>
  #+END_HTML
 
  #+BEGIN_HTML
  <p>
- <a href="https://github.com/vlead/ui-1.0-toolkit/tree/master/user-docs/index.org" target="_blank">Documentation on UI KIT (opens in another tab)</a> 
+ <a href="../ui-1.0-toolkit/user-docs/index.html" target="_blank">Documentation on UI KIT (opens in another tab)</a> 
  </p>
  #+END_HTML
 
