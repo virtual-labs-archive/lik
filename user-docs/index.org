@@ -60,9 +60,9 @@
   here:
 
 
-[[https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/setup-centos.org][Documentation on OVPL KIT (opens in another tab)]] 
+[[../ovpl-kit/user-docs/setup-centos.html][Documentation on OVPL KIT]] 
 
-[[https://github.com/vlead/ui-1.0-toolkit/blob/master/user-docs/index.org][Documentation on UI KIT (opens in another tab)]]
+[[../ui-1.0-toolkit/user-docs/index.html][Documentation on UI KIT]]
 
 
 
