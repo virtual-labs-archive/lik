@@ -1,7 +1,7 @@
 #Checkout directory
 COD=.
 DEST=build
-RELEASE=lik-release-0.6.0
+RELEASE=lik-release-1.0.0
 USER-DOCS=user-docs
 SETUP-DIR=setup-ovpl-centos
 SETUP-VERSION=v1.0.1
