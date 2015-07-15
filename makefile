@@ -4,9 +4,9 @@ DEST=build
 RELEASE=lik-release-1.0.0
 USER-DOCS=user-docs
 SETUP-DIR=setup-ovpl-centos
-SETUP-VERSION=v1.0.1
+SETUP-VERSION=v1.0.2
 OVPL-DIR=ovpl
-OVPL-VERSION=v1.0.4
+OVPL-VERSION=v1.0.5
 UI-DIR=ui-1.0-toolkit
 UI-VERSION=v1.0.1
 
@@ -55,14 +55,14 @@ build-ui-toolkit: co-ui-toolkit
 
 co-setup-ovpl-centos:
 	(cd ${COD}; git clone ${setup-ovpl-centos}; \
-	cd ${SETUP-DIR};)
-	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/setup-centos.org/\/user-docs\/setup-centos.html/' ${SETUP-DIR}/${USER-DOCS}/how-to-deploy-a-lab.org
+	cd ${SETUP-DIR}; git checkout -b version tags/${SETUP-VERSION})
+	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/setup-centos.org/..\/user-docs\/setup-centos.html/' ${SETUP-DIR}/${USER-DOCS}/how-to-deploy-a-lab.org
 	sed -i 's/https:\/\/github.com\/vlead\/ovpl\/blob\/master\/docs\/how-to-deploy-a-lab.org/..\/user-docs\/how-to-deploy-a-lab.html/' ${SETUP-DIR}/${USER-DOCS}/setup-centos.org
 co-ovpl:
 	(cd ${COD}; git clone ${ovpl}; \
-	cd ${OVPL-DIR};)
+	cd ${OVPL-DIR}; git checkout -b version tags/${OVPL-VERSION})
 
 co-ui-toolkit:
 	(cd ${COD}; git clone ${ui-toolkit}; \
-	cd ${UI-DIR};)
+	cd ${UI-DIR}; git checkout -b version tags/${UI-VERSION})
 
