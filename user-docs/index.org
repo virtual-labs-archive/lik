@@ -59,16 +59,10 @@
   Documentation for both Auto Deployment Service Kit and UI KIT is
   here:
 
- #+BEGIN_HTML
- <p>
- <a href="../ovpl-kit/user-docs/setup-centos.html" target="_blank">Documentation on OVPL KIT (opens in another tab)</a> 
- </p>
- #+END_HTML
 
- #+BEGIN_HTML
- <p>
- <a href="../ui-1.0-toolkit/user-docs/index.html" target="_blank">Documentation on UI KIT (opens in another tab)</a> 
- </p>
- #+END_HTML
+[[https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/setup-centos.org][Documentation on OVPL KIT (opens in another tab)]] 
+
+[[https://github.com/vlead/ui-1.0-toolkit/blob/master/user-docs/index.org][Documentation on UI KIT (opens in another tab)]]
+
 
 
