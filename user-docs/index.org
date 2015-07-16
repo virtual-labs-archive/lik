@@ -64,5 +64,5 @@
 
 [[https://github.com/vlead/ui-1.0-toolkit/blob/master/user-docs/index.org][Documentation for UI KIT]]
 
-[[https://github.com/Virtual-Labs/lik/blob/master/user-docs/definition-of-integration-levels.org][Documentation for Integration Levels]
+[[https://github.com/Virtual-Labs/lik/blob/master/user-docs/definition-of-integration-levels.org][Documentation for Integration Levels]]
 
