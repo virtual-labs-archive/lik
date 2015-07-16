@@ -56,13 +56,13 @@
 
 * Documentation
 
-  Documentation for both Auto Deployment Service Kit and UI KIT is
+  Documentation for both OVPL Kit and UI KIT is
   here:
 
 
-[[../ovpl-kit/user-docs/setup-centos.html][Documentation on OVPL KIT]] 
+[[../ovpl-kit/user-docs/setup-centos.html][Documentation of OVPL KIT]] 
 
-[[../ui-1.0-toolkit/user-docs/index.html][Documentation on UI KIT]]
+[[../ui-1.0-toolkit/user-docs/index.html][Documentation of UI KIT]]
 
 
 
