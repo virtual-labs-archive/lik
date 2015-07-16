@@ -62,10 +62,20 @@
   Note: In this document OVPL and ADS terms are used interchangeably. 
   Currently, OVPL is renamed to ADS (Auto Deployment Service). It still uses the same OVPL repository in lab deployment process.
   
+#+BEGIN_HTML
+<p>
+<a  href="https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/how-to-deploy-a-lab.org" target="_blank">Documentation for OVPL KIT (opens in another tab)</a>
+</p>
+#+END_HTML
 
-[[https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/how-to-deploy-a-lab.org][Documentation for OVPL KIT]] 
+#+BEGIN_HTML
+<p>
+<a href="https://github.com/vlead/ui-1.0-toolkit/blob/master/user-docs/index.org" target="_blank">Documentation for UI KIT (opens in another tab)</a>
+</p>
+#+END_HTML
 
-[[https://github.com/vlead/ui-1.0-toolkit/blob/master/user-docs/index.org][Documentation for UI KIT]]
-
-[[https://github.com/Virtual-Labs/lik/blob/master/user-docs/definition-of-integration-levels.org][Documentation for Integration Levels]]
-
+#+BEGIN_HTML
+<p>
+<a href="https://github.com/Virtual-Labs/lik/blob/master/user-docs/definition-of-integration-levels.org" target="_blank">Documentation for Integration Level (opens in another tab)</a>
+</p>
+#+END_HTML
