@@ -19,6 +19,7 @@ all: publish create-release
 init:
 	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/how-to-deploy-a-lab.org/..\/ovpl-kit\/user-docs\/how-to-deploy-a-lab.html/' ${USER-DOCS}/index.org
 	sed -i 's/https:\/\/github.com\/vlead\/ui-1.0-toolkit\/blob\/master\/user-docs\/index.org/..\/ui-1.0-toolkit\/user-docs\/index.html/' ${USER-DOCS}/index.org
+	sed -i 's/https:\/\/github.com\/Virtual-Labs\/lik\/blob\/master\/user-docs\/definition-of-integration-levels.org/..\/user-docs\/definition-of-integration-levels.html/' ${USER-DOCS}/index.org
 	(rm -rf ${COD}/${DEST}; rm -rf ${COD}/${SETUP-DIR}; \
 	rm -rf ${COD}/${OVPL-DIR}; rm -rf ${COD}/${UI-DIR}; \
 	rm -rf ${COD}/${RELEASE}; rm -rf ${COD}/${RELEASE}.tar; \
@@ -55,12 +56,12 @@ build-ui-toolkit: co-ui-toolkit
 
 co-setup-ovpl-centos:
 	(cd ${COD}; git clone ${setup-ovpl-centos}; \
-	cd ${SETUP-DIR}; git checkout -b version tags/${SETUP-VERSION})
+	cd ${SETUP-DIR}; git checkout develop)
 	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/setup-centos.org/..\/user-docs\/setup-centos.html/' ${SETUP-DIR}/${USER-DOCS}/how-to-deploy-a-lab.org
-	sed -i 's/https:\/\/github.com\/vlead\/setup-centos\/blob\/master\/user-docs\/how-to-deploy-a-lab.org/..\/user-docs\/how-to-deploy-a-lab.html/' ${SETUP-DIR}/${USER-DOCS}/setup-centos.org
+	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/how-to-deploy-a-lab.org/..\/user-docs\/how-to-deploy-a-lab.html/' ${SETUP-DIR}/${USER-DOCS}/setup-centos.org
 co-ovpl:
 	(cd ${COD}; git clone ${ovpl}; \
-	cd ${OVPL-DIR}; git checkout -b version tags/${OVPL-VERSION})
+	cd ${OVPL-DIR}; git checkout develop)
 
 co-ui-toolkit:
 	(cd ${COD}; git clone ${ui-toolkit}; \
