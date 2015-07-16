@@ -57,7 +57,7 @@ co-setup-ovpl-centos:
 	(cd ${COD}; git clone ${setup-ovpl-centos}; \
 	cd ${SETUP-DIR}; git checkout -b version tags/${SETUP-VERSION})
 	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/setup-centos.org/..\/user-docs\/setup-centos.html/' ${SETUP-DIR}/${USER-DOCS}/how-to-deploy-a-lab.org
-	sed -i 's/https:\/\/github.com\/vlead\/ovpl\/blob\/master\/docs\/how-to-deploy-a-lab.org/..\/user-docs\/how-to-deploy-a-lab.html/' ${SETUP-DIR}/${USER-DOCS}/setup-centos.org
+	sed -i 's/https:\/\/github.com\/vlead\/setup-centos\/blob\/master\/user-docs\/how-to-deploy-a-lab.org/..\/user-docs\/how-to-deploy-a-lab.html/' ${SETUP-DIR}/${USER-DOCS}/setup-centos.org
 co-ovpl:
 	(cd ${COD}; git clone ${ovpl}; \
 	cd ${OVPL-DIR}; git checkout -b version tags/${OVPL-VERSION})
