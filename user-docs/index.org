@@ -1,9 +1,9 @@
-#+title:  Lab Integration Kit (LIK 1.0.0)
+#+title:  Lab Integration Kit
 #+SETUPFILE: ./org-templates/level-0.org
 
 * Introduction
 
-  Welcome to the Virtual Labs Lab Integration Kit. This kit contains both software and user documenation 
+  Welcome to the Virtual Labs Version 1.0.0 Lab Integration Kit. This kit contains both software and user documenation 
   to help integrators:
 
 - deploy a lab automatically and
@@ -56,13 +56,13 @@
 
 * Documentation
 
-  Documentation for both OVPL Kit and UI KIT is
+  Documentation for OVPL Kit, UI KIT and Integration Levels is
   here:
 
 
-[[../ovpl-kit/user-docs/setup-centos.html][Documentation of OVPL KIT]] 
+[[https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/how-to-deploy-a-lab.org][Documentation for OVPL KIT]] 
 
-[[../ui-1.0-toolkit/user-docs/index.html][Documentation of UI KIT]]
+[[https://github.com/vlead/ui-1.0-toolkit/blob/master/user-docs/index.org][Documentation for UI KIT]]
 
-
+[[https://github.com/Virtual-Labs/lik/blob/master/user-docs/definition-of-integration-levels.org][Documentation for Integration Levels]
 

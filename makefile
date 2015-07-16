@@ -17,7 +17,7 @@ ui-toolkit=https://github.com/vlead/ui-1.0-toolkit.git
 all: publish create-release
 
 init:
-	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/setup-centos.org/..\/ovpl-kit\/user-docs\/setup-centos.html/' ${USER-DOCS}/index.org
+	sed -i 's/https:\/\/github.com\/vlead\/setup-ovpl-centos\/blob\/master\/user-docs\/how-to-deploy-a-lab.org/..\/ovpl-kit\/user-docs\/how-to-deploy-a-lab.html/' ${USER-DOCS}/index.org
 	sed -i 's/https:\/\/github.com\/vlead\/ui-1.0-toolkit\/blob\/master\/user-docs\/index.org/..\/ui-1.0-toolkit\/user-docs\/index.html/' ${USER-DOCS}/index.org
 	(rm -rf ${COD}/${DEST}; rm -rf ${COD}/${SETUP-DIR}; \
 	rm -rf ${COD}/${OVPL-DIR}; rm -rf ${COD}/${UI-DIR}; \
