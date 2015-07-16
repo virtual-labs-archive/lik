@@ -2,6 +2,17 @@
 #+Author: Khushpreet Kaur
 #+Date:   [2015-07-14 Tues]
 #+SETUPFILE: ./org-templates/level-0.org
+#+LINK_HOME: ./index.html
+#+LINK_UP:   ./index.html
+
+#+OPTIONS: LaTeX:t          Do the right thing automatically (MathJax)
+#+OPTIONS: ^:nil
+
+#+PROPERTY: results output
+#+PROPERTY: tangle no
+#+PROPERTY: exports code
+#+PROPERTY: eval no
+
 * Integration Levels
 
 ** Level 0 
