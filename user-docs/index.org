@@ -14,12 +14,12 @@
 #+BEGIN_example
 -  user-docs
       |
-      ---- index.org (instructions on the usage of the kit)
+      ---- index.html (instructions on the usage of the kit)
 -  ovpl-kit
       |
       ----- user-docs 
                |
-               ----  index.org (information about the usage)
+               ----  index.html (information about the usage)
       |
       ----- scripts (set up CentOS as a hosting environment)
       |
@@ -29,7 +29,7 @@
       |
       ----- user-docs 
                |
-               ----  index.org (steps to convert a lab to UI 1.0 format)
+               ----  index.html (steps to convert a lab to UI 1.0 format)
       |
       ----- scripts (needed for conversion to UI 1.0 format)
       |
@@ -56,9 +56,12 @@
 
 * Documentation
 
-  Documentation for OVPL Kit, UI KIT and Integration Levels is
+  Documentation for OVPL Kit/ADS (Auto Deployment Service), UI KIT and Integration Levels is
   here:
-
+  
+  Note: In this document OVPL and ADS terms are used interchangeably. 
+  Currently, OVPL is renamed to ADS (Auto Deployment Service). It still uses the same OVPL repository in lab deployment process.
+  
 
 [[https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/how-to-deploy-a-lab.org][Documentation for OVPL KIT]] 
 
