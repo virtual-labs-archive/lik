@@ -6,8 +6,8 @@
   Welcome to the Virtual Labs Version 1.0.0 Lab Integration Kit. This kit contains both software and user documenation 
   to help integrators:
 
-- deploy a lab automatically and
-- structure their labs to comply with a standard UI template
+- Deploy a lab automatically and
+- Structure their labs to comply with a standard UI template
   
 * Structure of this kit
 
@@ -23,7 +23,7 @@
       |
       ----- scripts (set up CentOS as a hosting environment)
       |
-      ----- ovpl (soruce code of auto deployment)
+      ----- ovpl (source code of auto deployment)
       |
 -  ui-kit
       |
