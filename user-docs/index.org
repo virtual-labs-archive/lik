@@ -56,11 +56,10 @@
 
 * Documentation
 
-  Documentation for OVPL Kit/ADS (Auto Deployment Service), UI KIT and Integration Levels is
+  Documentation for ADS (Auto Deployment Service)/OVPL KIT, UI KIT and Integration Levels is
   here:
   
   Note: In this document OVPL and ADS terms are used interchangeably. 
-  Currently, OVPL is renamed to ADS (Auto Deployment Service). It still uses the same OVPL repository in lab deployment process.
  
 [[https://github.com/vlead/setup-ovpl-centos/blob/master/user-docs/how-to-deploy-a-lab.org][Documentation for OVPL KIT]]
 
