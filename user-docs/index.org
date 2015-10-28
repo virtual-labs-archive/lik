@@ -3,7 +3,7 @@
 
 * Introduction
 
-  Welcome to the Virtual Labs Version 1.0.0 Lab Integration Kit. This kit contains both software and user documenation 
+  Welcome to the Virtual Labs Version 1.1.0 Lab Integration Kit. This kit contains both software and user documenation 
   to help integrators:
 
 - Deploy a lab automatically and
