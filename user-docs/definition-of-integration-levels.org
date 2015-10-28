@@ -94,7 +94,7 @@
      
      When the =backup= script is executed, a single file is generated in the
      same directoy.  The version of the lab software is appended to the
-     generated file. The file is named =labbackup_<version>.tar=.  Example
+     generated file. The file is named =labbackup-<version>.tar=.  Example
      values of =<version>= are =v1.0=, =v1.0.1= , etc.  More information on
      versioning/tagging is available [[http://git-scm.com/book/en/v2/Git-Basics-Tagging][here]].
 
