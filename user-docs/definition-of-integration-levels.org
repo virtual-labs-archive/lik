@@ -1,5 +1,5 @@
-#+Title:  Level 5 Definition Guide
-#+Author: Khushpreet Kaur
+#+Title:  Guide to Integration level definitions
+#+Author: VLEAD
 #+Date:   [2015-07-14 Tues]
 #+SETUPFILE: ./org-templates/level-0.org
 #+LINK_HOME: ./index.html
